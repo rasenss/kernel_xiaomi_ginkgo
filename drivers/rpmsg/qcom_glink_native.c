@@ -1763,7 +1763,7 @@ static void qcom_glink_rx_close(struct qcom_glink *glink, unsigned int rcid)
 	/* cancel pending rx_done work */
 	kthread_cancel_work_sync(&channel->intent_work);
 
-	if (channel->rpdev) {
+	if (channel->rpdev)
 		strlcpy(chinfo.name, channel->name, sizeof(chinfo.name));
 		chinfo.src = RPMSG_ADDR_ANY;
 		chinfo.dst = RPMSG_ADDR_ANY;
